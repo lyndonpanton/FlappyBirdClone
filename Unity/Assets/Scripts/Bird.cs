@@ -11,6 +11,7 @@ public class Bird : MonoBehaviour
     public float canFlap = 0f;
 
     public float gameOverPoint;
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,23 +33,26 @@ public class Bird : MonoBehaviour
     {
         float flapping = Input.GetAxis("Jump");
 
-        if (flapping != 0)
+        if (!isDead)
         {
-            rb2d.SetRotation(45);
-            rb2d.AddForce(
-                new Vector2(0, 1.5f),
-                ForceMode2D.Impulse
-            );
-        }
-        else
-        {
-            rb2d.SetRotation(0);
+            if (flapping != 0)
+            {
+                rb2d.SetRotation(45);
+                rb2d.AddForce(
+                    new Vector2(0, 1.5f),
+                    ForceMode2D.Impulse
+                );
+            }
+            else
+            {
+                rb2d.SetRotation(0);
+            }
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        KillBird();
     }
 
     void OnDestroy()
@@ -59,10 +63,23 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Destroy bird if y position < lowerBound - circle collider radius
+        // Destroy game object after it falls out of the bottom of the screen
         if (transform.position.y < gameOverPoint)
         {
-            Destroy(gameObject);
+            KillBird();
         }
+    }
+
+    // TODO
+    void KillBird()
+    {
+        // Disable player controls
+        isDead = true;
+        // Rotate bird sprite so the bird is facing downwards
+        rb2d.SetRotation(315);
+        // Remove circle collider (so the bird just falls down)
+        Destroy(cc2d);
+        // Destroy bird after some time
+        Destroy(gameObject, 2f);
     }
 }

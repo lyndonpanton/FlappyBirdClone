@@ -14,7 +14,7 @@ public class PipeSpawner : MonoBehaviour
 
         GameObject pipeTop = Instantiate(
             pipePrefabs[randomIndex],
-            new Vector2(0, 0),
+            new Vector2(12, 0),
             Quaternion.identity
         );
 
@@ -27,7 +27,7 @@ public class PipeSpawner : MonoBehaviour
         // 6 - 0
         GameObject pipeBottom = Instantiate(
             pipePrefabs[Mathf.Abs(randomIndex - (pipePrefabs.Length - 1))],
-            new Vector2(0, 0),
+            new Vector2(12, 0),
             Quaternion.identity
         );
 
