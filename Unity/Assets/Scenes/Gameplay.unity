@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420039}
   - component: {fileID: 519420037}
   - component: {fileID: 519420038}
   m_Layer: 0
@@ -265,3 +266,27 @@ MonoBehaviour:
   - {fileID: 5399324931926360936, guid: c4de9b130c1e76b48a9a3950d32cb415, type: 3}
   - {fileID: 3631223807744068126, guid: 798d87253ac2d4f4dab6f1844f511edb, type: 3}
   - {fileID: 2318972589004884484, guid: 936e5cdd79eab1c4384c6bde2f96a25f, type: 3}
+  spawnTime: 3
+  currentTime: 0
+--- !u!68 &519420039
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -9.8, y: -5}
+  - {x: -9.8, y: 5}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

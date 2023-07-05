@@ -6,8 +6,30 @@ public class PipeSpawner : MonoBehaviour
 {
     public GameObject[] pipePrefabs;
 
+    // Spawn pipes every 3 seconds
+    public float spawnTime = 3f;
+    public float currentTime = 0f;
+
     // Start is called before the first frame update
     void Start()
+    {
+        SpawnPipePair();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Add pipe pair every x seconds
+        currentTime += Time.deltaTime;
+
+        if (currentTime >= spawnTime)
+        {
+            SpawnPipePair();
+            currentTime = 0f;
+        }
+    }
+
+    void SpawnPipePair()
     {
         int randomIndex = Random.Range(0, pipePrefabs.Length);
 
@@ -43,11 +65,5 @@ public class PipeSpawner : MonoBehaviour
 
         pipeTop.transform.localScale *= 8;
         pipeBottom.transform.localScale *= 8;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Add pipe pair every x seconds
     }
 }
