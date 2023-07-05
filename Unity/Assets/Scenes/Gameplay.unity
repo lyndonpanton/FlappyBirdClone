@@ -338,7 +338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
+  cc2d: {fileID: 0}
   canFlap: 0
+  gameOverPoint: 0
 --- !u!58 &8417705466219474033
 CircleCollider2D:
   m_ObjectHideFlags: 0
