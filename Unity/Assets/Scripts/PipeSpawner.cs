@@ -9,11 +9,6 @@ public class PipeSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < pipePrefabs.Length; i++)
-        {
-            pipePrefabs[i].AddComponent<Pipe>();
-        }
-
         int randomIndex = Random.Range(0, pipePrefabs.Length);
 
 
