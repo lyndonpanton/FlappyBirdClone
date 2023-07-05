@@ -30,6 +30,7 @@ public class Pipe : MonoBehaviour
         {
             KillPipe();
         }
+
         // Flipped sprites go in the opposite direction
         if (gameObject.GetComponent<SpriteRenderer>().flipX)
         {
