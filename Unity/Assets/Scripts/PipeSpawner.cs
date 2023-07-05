@@ -19,7 +19,7 @@ public class PipeSpawner : MonoBehaviour
 
         GameObject pipeTop = Instantiate(
             pipePrefabs[randomIndex],
-            new Vector2(1, 0),
+            new Vector2(0, 0),
             Quaternion.identity
         );
 
@@ -32,13 +32,19 @@ public class PipeSpawner : MonoBehaviour
         // 6 - 0
         GameObject pipeBottom = Instantiate(
             pipePrefabs[Mathf.Abs(randomIndex - (pipePrefabs.Length - 1))],
-            new Vector2(-1, 0),
+            new Vector2(0, 0),
             Quaternion.identity
         );
 
-        // TODO
         // Spawn bottom pipe at the bottom of the screen
-        // Rotation -> flip z -> move
+        // Rotate so the bottom pipe is the correct way round
+        pipeBottom.transform.Rotate(
+            new Vector3(0, 0, 180)
+        );
+
+        // Flip so the bottom pipe's dark and light sides match the top pipe's
+        // sides
+        pipeBottom.GetComponent<SpriteRenderer>().flipX = true;
 
         pipeTop.transform.localScale *= 8;
         pipeBottom.transform.localScale *= 8;
