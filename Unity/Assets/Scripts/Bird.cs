@@ -46,6 +46,11 @@ public class Bird : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
     void OnDestroy()
     {
         Debug.Log("Game Over");
