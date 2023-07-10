@@ -64,13 +64,12 @@ public class Bird : MonoBehaviour
     void Update()
     {
         // Destroy game object after it falls out of the bottom of the screen
-        if (transform.position.y < gameOverPoint)
+        if (transform.position.y < gameOverPoint && !isDead)
         {
             KillBird();
         }
     }
 
-    // TODO
     void KillBird()
     {
         // Disable player controls
@@ -79,6 +78,8 @@ public class Bird : MonoBehaviour
         rb2d.SetRotation(315);
         // Remove circle collider (so the bird just falls down)
         Destroy(cc2d);
+        // Show options after death
+        GameManager.ShowDeathOptions();
         // Destroy bird after some time
         Destroy(gameObject, 2f);
     }
