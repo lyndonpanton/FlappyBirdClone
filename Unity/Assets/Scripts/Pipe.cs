@@ -46,6 +46,20 @@ public class Pipe : MonoBehaviour
         }
     }
 
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        //if (collision.gameObject.CompareTag("TopPipe"))
+        //{
+        //    Debug.Log("beep");
+        //    // increment score
+        //    GameManager.IncrementScore(1);
+        //}
+
+        GameManager.IncrementScore(0.5f);
+
+        //Debug.Log(collision.tag + " / " + collision.gameObject.tag);
+    }
+
     void KillPipe()
     {
         Destroy(gameObject);

@@ -8,10 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2318972589004884486}
+  - component: {fileID: 4256054525273975458}
   - component: {fileID: 2318972589004884485}
   - component: {fileID: -938079866853014325}
   - component: {fileID: 1969855416479760508}
+  - component: {fileID: 472858912319348241}
   m_Layer: 0
   m_Name: Pipe_07
   m_TagString: Untagged
@@ -19,8 +20,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2318972589004884486
-Transform:
+--- !u!224 &4256054525273975458
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -34,6 +35,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1.28, y: 1.28}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &2318972589004884485
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9931b2055fa45458debcba7cc56b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pipeDestroyPoint: 0
+  bc2d: {fileID: 0}
 --- !u!61 &1969855416479760508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,3 +132,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18741977, y: 0.63326293}
   m_EdgeRadius: 0
+--- !u!70 &472858912319348241
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318972589004884484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000029802322, y: -0.19316238}
+  m_Size: {x: 0.1346609, y: 0.38463557}
+  m_Direction: 0

@@ -63,6 +63,9 @@ public class PipeSpawner : MonoBehaviour
         // sides
         pipeBottom.GetComponent<SpriteRenderer>().flipX = true;
 
+        pipeTop.tag = "TopPipe";
+        pipeBottom.tag = "BottomPipe";
+
         pipeTop.transform.localScale *= 8;
         pipeBottom.transform.localScale *= 8;
     }
